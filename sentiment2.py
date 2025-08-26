@@ -1,14 +1,15 @@
 from textblob import TextBlob
 
+def analyze_sentiment(text):
+    blob = TextBlob(text)
+    return blob.sentiment.polarity, blob.sentiment.subjectivity
+
+
 # Sample text for sentiment analysis
 text = "I love using AI tools. They make life so much easier!"
 
-# Create a TextBlob object
-blob = TextBlob(text)
-
 # Get sentiment polarity and subjectivity
-polarity = blob.sentiment.polarity
-subjectivity = blob.sentiment.subjectivity
+polarity, subjectivity = analyze_sentiment(text)
 
 # Print the results
 print(f"Text: {text}")
